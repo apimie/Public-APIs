@@ -1,0 +1,42 @@
+**Polymarket Market Data & Whale Tracker**
+
+Do you want to know what the big players are doing on Polymarket — before it's too late?
+
+This actor gives you live data from Polymarket prediction markets: prices, volumes, and — the realy interesting part — **who is betting big and where**. Every 6 hours the database updates automaticaly with fresh trades from the Polymarket CLOB API, so you always have current data without doing any scraping yourself.
+
+---
+
+**What you can do with it**
+
+- Get a list of all active markets with prices, bid/ask spread, and volume
+- See the full price history of any market (usefull for backtesting or spotting trends)
+- Find the top whale wallets — traders who moved $10,000+ in USDC in the last 30 days
+- See exactly what positions a whale is holding right now
+- Check which whales are concentrated in a specific market (great before a big resolution)
+- Get a wallet's daily trading timeline — becouse knowing *when* someone acts is as important as knowing *what* they hold
+
+---
+
+**7 ready-to-use actions**
+
+| Action | What it returns |
+|---|---|
+| `list_markets` | Active markets sorted by volume |
+| `market_detail` | Full metadata + latest snapshot for one market |
+| `market_history` | Time-series price snapshots for one market |
+| `whale_list` | Top whale wallets with total volume + buy/sell split |
+| `whale_positions` | Open positions for a specific wallet |
+| `whale_history` | Daily activity timeline for a specific wallet |
+| `market_whales` | All whales with positions in one market |
+
+---
+
+**How to start**
+
+1. Run with `{"action": "list_markets"}` — no setup needed
+2. Pick a market ID or wallet address from the results
+3. Use it as input for the detail/history/whale actions
+
+Ther is no complicated auth. Just run the actor and the data comes out as a clean JSON dataset, ready for your scripts, spreadsheets, or dashboards.
+
+Data covers **~600 markets**, **~28,000 identified whale wallets**, and **~95,000 individual trades** alerady loaded. New data arrives every 6 hours.
